@@ -1,0 +1,19 @@
+﻿Build started 2015-01-23 00:49:52.
+     1>Project "C:\Users\miechuliv\Documents\Visual Studio 2012\Projects\Oscyloskop2\Oscyloskop2\Oscyloskop2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.0\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.DataVisualization.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib MyForm.cpp
+         MyForm.cpp
+     1>c:\users\miechuliv\documents\visual studio 2012\projects\oscyloskop2\oscyloskop2\Oscyl.h(72): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\miechuliv\documents\visual studio 2012\projects\oscyloskop2\oscyloskop2\Oscyl.h(82): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\miechuliv\documents\visual studio 2012\projects\oscyloskop2\oscyloskop2\Pakiet.h(153): warning C4018: '<=' : signed/unsigned mismatch
+     1>c:\users\miechuliv\documents\visual studio 2012\projects\oscyloskop2\oscyloskop2\MyForm.h(370): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\miechuliv\documents\visual studio 2012\projects\oscyloskop2\oscyloskop2\MyForm.h(371): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\miechuliv\Documents\Visual Studio 2012\Projects\Oscyloskop2\Debug\Oscyloskop2.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\Oscyloskop2.MyForm.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\miechuliv\Documents\Visual Studio 2012\Projects\Oscyloskop2\Debug\Oscyloskop2.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\MyForm.obj
+         "Debug\.NETFramework,Version=v4.5.AssemblyAttributes.obj"
+         Oscyloskop2.vcxproj -> C:\Users\miechuliv\Documents\Visual Studio 2012\Projects\Oscyloskop2\Debug\Oscyloskop2.exe
+     1>Done Building Project "C:\Users\miechuliv\Documents\Visual Studio 2012\Projects\Oscyloskop2\Oscyloskop2\Oscyloskop2.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.07

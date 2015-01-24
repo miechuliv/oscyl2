@@ -15,6 +15,11 @@ class Pakiet
 
 	  bool pakietPoprawny;
 
+	  int liczbaPakietow;
+
+	  int sredniaLiczbaProbek;
+
+	  
 
 	  /*
 	  
@@ -27,6 +32,8 @@ class Pakiet
 			  {
 				  if(this->pakietPoprawny)
 				  {
+					  this->liczbaPakietow ++ ;
+					  this->sredniaLiczbaProbek = (this->sredniaLiczbaProbek*(this->liczbaPakietow-1) + this->przeliczonaIloscProbek)/this->liczbaPakietow;
 					  return true;
 				  }
 				  
@@ -49,6 +56,7 @@ class Pakiet
 	  Pakiet()
 	  {
 		  this->pakietPoprawny  = false;
+		  this->liczbaPakietow = 0;
 	  };
 
 	  unsigned char* getProbki()
@@ -75,13 +83,26 @@ class Pakiet
 
 	int przeliczonaIloscProbek;
 
+	void resetData()
+	{
+		memset(this->poczatekPakietu, 0, sizeof(this->poczatekPakietu));
+			memset(this->podstawaCzasu, 0, sizeof(this->podstawaCzasu));
+		memset(this->tryb, 0, sizeof(this->tryb));
+		memset(this->iloscProbek, 0, sizeof(this->iloscProbek));
+		memset(this->koniecPakietu, 0, sizeof(this->koniecPakietu));
+
+		this->przeliczonaIloscProbek = 0;
+	}
+
 	bool szukajPoczatkuPakietu()
 	{
+		this->resetData();
 		this->com->czytajDoBuffera(this->poczatekPakietu,sizeof(this->poczatekPakietu));
 
 		if(this->sprawdzCzyPoczatekPakieru(this->poczatekPakietu))
 		{
 			this->zaladujPakiet();
+			
 			return true;
 		}
 
@@ -120,6 +141,10 @@ class Pakiet
 		this->czytajIleProbek();
 
 		this->przeliczonaIloscProbek = this->obliczIloscProbek(this->iloscProbek);
+		if(this->przeliczonaIloscProbek > 125)
+		{
+			int a = 5;
+		}
 		this->probki = new unsigned char[this->przeliczonaIloscProbek];
 		this->czytajProbki();
 
@@ -130,14 +155,16 @@ class Pakiet
 	{
 
 		char binaryString[16];
+		unsigned char starszy = dane[0];
+		unsigned char mlodszy = dane[1];
 		unsigned int dzielnik = 128;
 		unsigned int z;
 		for(int i = 0  ; i < 8 ; i++ )
 		{
-			if((dane[0]/dzielnik) >= 1)
+			if((starszy/dzielnik) >= 1)
 			{
 				binaryString[i] = 1;
-				dane[0] -= dzielnik;
+				starszy -= dzielnik;
 			}
 			else
 			{
@@ -152,10 +179,10 @@ class Pakiet
 		dzielnik = 128;
 		for(int i = z+1  ; i <= 8 + z  ; i++ )
 		{
-			if((dane[1]/dzielnik) >= 1)
+			if((mlodszy/dzielnik) >= 1)
 			{
 				binaryString[i] = 1;
-				dane[1] -= dzielnik;
+				mlodszy -= dzielnik;
 			}
 			else
 			{
@@ -176,6 +203,11 @@ class Pakiet
 			}
 
 			mnoznik /= 2;
+		}
+
+		if(wynik > 125)
+		{
+			int a = 5;
 		}
 
 		return wynik;

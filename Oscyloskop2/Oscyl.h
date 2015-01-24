@@ -45,6 +45,9 @@ class Oscyl
 		// czy uzywac przygotowanego sinusa do testow
 		bool usefakeBuffer;
 
+		// przez ten wsp. mnozymy wartosc probki i wychodzi pozycja w pionie próbki na wyswietlaczy
+		int mnoznikWysokosciowy;
+
 
 		void zaladujProbki(unsigned char* probki, int liczbaProbek)
 		{
@@ -104,6 +107,7 @@ class Oscyl
 			this->ilePomijac = 1;
 			this->ilePixeliProbka = 1;
 			this->usefakeBuffer = false;
+			this->mnoznikWysokosciowy = int(this->displayMaxY / 255 );
 
 			/*for(int i=0; i<256; i++)
 			{

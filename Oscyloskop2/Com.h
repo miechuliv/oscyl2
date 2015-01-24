@@ -48,8 +48,8 @@ class Com
 			this->uchwyt = CreateFileA(this->numerPortu, GENERIC_READ, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
 			// wazne! jesli nie ustawie timeoutow to przy probie odczytu i braku danych na porcie funkcja odczytu bedzie czekac tak dlugo az przyjda dane co  zablokuje program
 			COMMTIMEOUTS timeouts;
-			timeouts. ReadTotalTimeoutConstant = 1;
-			timeouts.ReadIntervalTimeout = 1;
+			timeouts. ReadTotalTimeoutConstant = 10;
+			timeouts.ReadIntervalTimeout = 10;
 			timeouts.ReadTotalTimeoutMultiplier = 1;
 			COMMTIMEOUTS* pointer = &timeouts;
 			SetCommTimeouts(this->uchwyt,pointer);
@@ -107,6 +107,8 @@ class Com
 		{
 			// zmkniecie uchwytu do coma ,uchwyt trzeba zwolnic zawsze na koniec programu aby uniknac problemu
 			CloseHandle(this->uchwyt);
+			this->stanUchwytu = false;
+			this->portOtwarty = false;
 		}
 
 		// destructor

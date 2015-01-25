@@ -32,6 +32,9 @@
     <ClInclude Include="Pakiet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Wyzwalacze.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
